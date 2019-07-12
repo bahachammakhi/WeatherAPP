@@ -1,72 +1,79 @@
-.home-header{
-  font-size: 2vw;
-  color: #5E94FE;
+@import url("https://fonts.googleapis.com/css?family=Barriecito|Roboto+Slab&display=swap");
+.home-header {
+  font-family: "Barriecito", cursive;
+  font-size: 4vw;
+  color: #5e94fe;
   font-weight: bolder;
 }
-.elipse1{
+.elipse1 {
   margin-left: 90%;
   position: fixed;
- }
- .elipse2{
+}
+.elipse2 {
   position: fixed;
-bottom: -25px;
+  bottom: -25px;
   margin-left: -10%;
 }
-.btn-modified{
-  background-color: #FFDD8D;
+.btn-modified {
+  background-color: #ffdd8d;
   width: 50%;
   border-radius: 25px;
-    border: 2px solid rgb(253, 253, 253);
-   font-size: 15px;
-   color: gray;
-   font-weight: bold;
-    height: 50px; 
-  }
-  .group-home{
-    margin-top: 10%;
-    margin-left: 30%;
-  }
-  .form-control-m{
-    width: 50%;
-    border-radius: 25px;
-    border: 2px solid #FFDD8D;
-    padding: 20px; 
-    height: 50px; 
-  }
-@media only screen and (max-width: 758px) {
-.home-header{
-  font-size: 5vw;
-  color: #5E94FE;
-  font-weight: bolder;
-}
-.elipse1{
- margin-left: 70%;
- position: fixed;
-}
-.elipse2{
-  position: fixed;
-bottom: -25px;
-  margin-left: -35%;
-}
-.btn-modified{
-background-color: #FFDD8D;
-width: 70%;
-border-radius: 25px;
   border: 2px solid rgb(253, 253, 253);
- font-size: 15px;
- color: gray;
- font-weight: bold;
-  height: 50px; 
+  font-size: 15px;
+  color: gray;
+  font-weight: bold;
+  height: 50px;
 }
-.group-home{
-  margin-top: 40%;
-  margin-left: 5%;
+.group-home {
+  margin-top: 10%;
+  margin-left: 30%;
 }
-.form-control-m{
-  width: 67%;
+.form-control-m {
+  width: 50%;
   border-radius: 25px;
-  border: 2px solid #FFDD8D;
-  padding: 20px; 
-  height: 50px; 
+  border: 2px solid #ffdd8d;
+  padding: 20px;
+  height: 50px;
 }
+@media only screen and (max-width: 758px) {
+  /* Home page Mobile CSS*/
+  .home-header {
+    font-size: 7vw;
+    color: #5e94fe;
+    font-weight: bolder;
+  }
+  .elipse1 {
+    margin-left: 70%;
+    position: fixed;
+  }
+  .elipse2 {
+    position: fixed;
+    bottom: -25px;
+    margin-left: -35%;
+  }
+  .btn-modified {
+    background-color: #ffdd8d;
+    width: 70%;
+    border-radius: 25px;
+    border: 2px solid rgb(253, 253, 253);
+    font-size: 15px;
+    color: gray;
+    font-weight: bold;
+    height: 50px;
+  }
+  .group-home {
+    margin-top: 40%;
+    margin-left: 5%;
+  }
+  .form-control-m {
+    width: 67%;
+    border-radius: 25px;
+    border: 2px solid #ffdd8d;
+    padding: 20px;
+    height: 50px;
+  }
+  /*Weather Mobile CSS */
+  .degree {
+    float: left;
+  }
 }
