@@ -9,7 +9,7 @@ class App extends React.Component {
       city: "Tunis",
       Week: [],
       tempCurrently: "",
-      displayhome: true,
+      displayhome: false,
       icon: "10d"
     };
   }
@@ -35,7 +35,7 @@ class App extends React.Component {
     );
     // second Page
     const weather = (
-      <div>
+      <div className="weatherpage" >
         <Weather DisplayBack={this.DisplayBack} city={this.state.city} />
       </div>
     );

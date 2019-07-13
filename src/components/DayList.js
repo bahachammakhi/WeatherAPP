@@ -18,12 +18,14 @@ class DayList extends Component {
   render() {
     //day name const
     const day = this.getDayOfWeek(this.props.date);
+    // temp min converted
     const tempmin = this.props.tempmin.toPrecision(2);
+    //temp max converted
     const tempmax = this.props.tempmax.toPrecision(2);
     return (
         <div>
             <div className="row m-auto">
-        <p className="m-auto">{day}</p> 
+        <p className="m-auto text-dark ">{day}</p> 
         <p className="m-auto">{tempmax}</p>
         <p className="m-auto text-muted">{tempmin}</p>
        

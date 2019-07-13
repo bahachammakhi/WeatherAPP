@@ -5,6 +5,23 @@
   color: #5e94fe;
   font-weight: bolder;
 }
+.home-footer{
+  font-family: "Barriecito", cursive;
+  font-size: 2vw;
+  color: #5e94fe;
+  font-weight: bolder;
+  bottom: 0;
+  right: 0;
+  position: fixed;
+  margin-right: 100px;
+  margin-bottom: 15px;
+}
+.weatherpage{
+  margin-left: 25%;
+  margin-right: 25%;
+  margin-top: 0%;
+  margin-bottom:25%;
+}
 .elipse1 {
   margin-left: 90%;
   position: fixed;
@@ -42,6 +59,13 @@
     color: #5e94fe;
     font-weight: bolder;
   }
+  .home-footer{
+    font-size: 5vw;
+    color: #5e94fe;
+    font-weight: bolder;
+    margin-right: 20px;
+    margin-bottom: 15px;
+  }
   .elipse1 {
     margin-left: 70%;
     position: fixed;
@@ -78,5 +102,11 @@
   }
   .w{
     width: 50px;
+  }
+  .weatherpage{
+    margin-left: 0%;
+    margin-right: 0%;
+    margin-top: 0%;
+    margin-bottom:0%;
   }
 }

@@ -49,6 +49,7 @@ class Home extends Component {
             </button>
           </div>
           <img className="elipse2" src={elipse1} alt="elipse2" />
+          <h1 className="home-footer ">Copyrigth Baha chammakhi</h1>
         </div>
       </div>
     );
