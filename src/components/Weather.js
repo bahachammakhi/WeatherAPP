@@ -1,14 +1,18 @@
 import React, { Component } from "react";
 import Search from "../img/search.png";
 import Back from "../img/back.png";
+import DayList from "./DayList";
 class Weather extends Component {
   constructor(props) {
     super(props);
     //states
     this.state = {
-      city: "",
-      Week: [],
-      icon: "10d"
+      city: "Tunis",
+      week: [],
+      days: [],
+      icon: "10d",
+      description: "",
+      humidity :""
     };
   }
   componentDidMount() {
@@ -28,7 +32,16 @@ class Weather extends Component {
           country: data.city.country,
           city: data.city.name,
           week: data.list,
-          icon: data.list[0].weather[0].icon
+          humidity : data.list[0].main.humidity,
+          days: [
+            data.list[0],
+            data.list[8],
+            data.list[16],
+            data.list[24],
+            data.list[32]
+          ],
+          icon: data.list[0].weather[0].icon,
+          description: data.list[0].weather[0].description
         });
       });
   }
@@ -59,11 +72,30 @@ class Weather extends Component {
     var n = weekday[d.getDay()];
     return n;
   };
+
   render() {
     // icon
     const icon = this.state.icon;
     //day
     const day = this.GetDay();
+    //Day description
+    const description = this.state.description;
+    //Humidity 
+    const humidity =  "Humidity : " +this.state.humidity + "%"
+    //days list
+    const dayslist = this.state.days.map(days => {
+      return (
+        <div>
+          <DayList
+            key={days.dt}
+            tempmin={days.main.temp_min}
+            tempmax={days.main.temp_max}
+            icon={days.weather[0].icon}
+            date={days.dt_txt}
+          />
+        </div>
+      );
+    });
     return (
       <div>
         <div>
@@ -85,6 +117,10 @@ class Weather extends Component {
             </div>
             <div className="row">
               <h6 className="ml-3 mt-2 font-weight-bold">{day}</h6>
+              <h6 className="text-capitalize ml-3 mt-2">{description}</h6>
+            </div>
+            <div>
+                  {humidity}
             </div>
           </div>
 
@@ -106,6 +142,7 @@ class Weather extends Component {
         }
         <div className="ml-3">
           <h5>Weekly forecast</h5>
+          {dayslist}
         </div>
       </div>
     );

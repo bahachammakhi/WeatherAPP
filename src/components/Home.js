@@ -27,22 +27,22 @@ class Home extends Component {
           </div>
 
           <img className="elipse1" src={elipse2} alt="elipse1" />
-          <div class="form-group group-home ">
+          <div className="form-group group-home ">
             <input
               type="text"
-              class="form-control form-control-m "
+              className="form-control form-control-m "
               id="exampleInputEmail1"
               aria-describedby="emailHelp"
               placeholder="City Name"
               onChange={this.handleUserInput}
               name="city"
             />
-            <small id="emailHelp" class="form-text text-muted">
+            <small id="emailHelp" className="form-text text-muted">
               Search for the city .
             </small>
             <button
               type="button"
-              class="btn btn-modified btn-lg btn-block mt-3"
+              className="btn btn-modified btn-lg btn-block mt-3"
               onClick={this.Display}
             >
               Get the Weather Near me

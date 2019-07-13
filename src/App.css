@@ -76,4 +76,7 @@
   .degree {
     float: left;
   }
+  .w{
+    width: 50px;
+  }
 }
