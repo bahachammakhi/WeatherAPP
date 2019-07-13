@@ -26,7 +26,7 @@ class Home extends Component {
             <h1 className="home-header mt-3 ">Weather APP</h1>
           </div>
 
-          <img className="elipse1" src={elipse2} />
+          <img className="elipse1" src={elipse2} alt="elipse1" />
           <div class="form-group group-home ">
             <input
               type="text"
@@ -48,7 +48,7 @@ class Home extends Component {
               Get the Weather Near me
             </button>
           </div>
-          <img className="elipse2" src={elipse1} />
+          <img className="elipse2" src={elipse1} alt="elipse2" />
         </div>
       </div>
     );
