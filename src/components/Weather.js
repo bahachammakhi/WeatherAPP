@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import Search from "../img/search.png";
 import Back from "../img/back.png";
 import DayList from "./DayList";
+import elipse1 from "../img/Ellipse1.png";
+import elipse2 from "../img/Ellipse2.png";
 class Weather extends Component {
   constructor(props) {
     super(props);
@@ -167,6 +169,7 @@ class Weather extends Component {
               )}
             </form>
           </nav>
+          <img className="elipse1 d-none d-sm-block" src={elipse2} alt="elipse1" />
         </div>
         <div className="weather-header row ">
           <div className="col ml-3 mt-3">
@@ -198,10 +201,11 @@ class Weather extends Component {
         {
           //Weekly forcast
         }
-        <div className="ml-3">
+        <div className=" forcast">
           <h5>Weekly forecast</h5>
           {dayslist}
         </div>
+        <img className="elipse3 d-none d-sm-block" src={elipse1} alt="elipse2" />
       </div>
     );
   }

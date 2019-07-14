@@ -16,12 +16,7 @@
   margin-right: 100px;
   margin-bottom: 15px;
 }
-.weatherpage {
-  margin-left: 25%;
-  margin-right: 25%;
-  margin-top: 0%;
-  margin-bottom: 25%;
-}
+
 .elipse1 {
   margin-left: 90%;
   position: fixed;
@@ -30,6 +25,13 @@
   position: fixed;
   bottom: -25px;
   margin-left: -10%;
+}
+.elipse3{
+  position: fixed;
+  left: 0px;
+  top : 100px;
+  margin-left: -10%;
+
 }
 .btn-modified {
   background-color: #ffdd8d;
@@ -51,6 +53,24 @@
   border: 2px solid #ffdd8d;
   padding: 20px;
   height: 50px;
+}
+.positionicon{
+  cursor: pointer;
+}
+.position{
+  color: rgb(0, 0, 0);
+  margin-left: 30%;
+  margin-top: 10%;
+  color: #5e94fe;
+}
+/* Weather page css */
+.weather-header{
+  margin-right: 25%;
+  margin-left:25%;
+}
+.forcast{
+  margin-left: 25%;
+  margin-right: 25%;
 }
 @media only screen and (max-width: 758px) {
   /* Home page Mobile CSS*/
@@ -101,11 +121,15 @@
   }
   .position{
     color: rgb(0, 0, 0);
-    margin-left: 30%;
+    margin-left: 10%;
     margin-top: 30%;
     color: #5e94fe;
   }
   /*Weather Mobile CSS */
+  .weather-header{
+    margin-right: 0%;
+    margin-left:0%;
+  }
   .degree {
     float: left;
   }
@@ -122,5 +146,9 @@
     color: rgb(0, 0, 0);
     font-weight: bolder;
     font-size: 1em;
+  }
+  .forcast{
+    margin-left: 10%;
+    margin-right: 10%;
   }
 }

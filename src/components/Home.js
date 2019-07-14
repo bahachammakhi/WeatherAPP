@@ -51,7 +51,7 @@ class Home extends Component {
             {//Get current position 
             }
             <div className="row position">
-              <h6 className="mt-3 mr-2" >Get your position weather</h6>
+              <h6 className="mt-3 mr-2" >Get The weather on your Position</h6>
             <i className="fas fa-map-marker-alt fa-4x positionicon animated bounce infinite " onClick={this.props.getCurrentPosition} ></i>
             </div>
             
