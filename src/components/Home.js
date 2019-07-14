@@ -5,7 +5,7 @@ class Home extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      city: "tunis"
+      city: "Tunis",
     };
   }
   Display = () => {
@@ -18,6 +18,7 @@ class Home extends Component {
       [name]: value // the value of the text input
     });
   };
+  
   render() {
     return (
       <div>
@@ -47,6 +48,13 @@ class Home extends Component {
             >
               Get the Weather Near me
             </button>
+            {//Get current position 
+            }
+            <div className="row position">
+              <h6 className="mt-3 mr-2" >Get your position weather</h6>
+            <i className="fas fa-map-marker-alt fa-4x positionicon animated bounce infinite " onClick={this.props.getCurrentPosition} ></i>
+            </div>
+            
           </div>
           <img className="elipse2" src={elipse1} alt="elipse2" />
           <h1 className="home-footer ">Copyrigth Baha chammakhi</h1>

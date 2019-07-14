@@ -5,7 +5,7 @@
   color: #5e94fe;
   font-weight: bolder;
 }
-.home-footer{
+.home-footer {
   font-family: "Barriecito", cursive;
   font-size: 2vw;
   color: #5e94fe;
@@ -16,11 +16,11 @@
   margin-right: 100px;
   margin-bottom: 15px;
 }
-.weatherpage{
+.weatherpage {
   margin-left: 25%;
   margin-right: 25%;
   margin-top: 0%;
-  margin-bottom:25%;
+  margin-bottom: 25%;
 }
 .elipse1 {
   margin-left: 90%;
@@ -59,7 +59,7 @@
     color: #5e94fe;
     font-weight: bolder;
   }
-  .home-footer{
+  .home-footer {
     font-size: 5vw;
     color: #5e94fe;
     font-weight: bolder;
@@ -96,17 +96,31 @@
     padding: 20px;
     height: 50px;
   }
+  .positionicon{
+    cursor: pointer;
+  }
+  .position{
+    color: rgb(0, 0, 0);
+    margin-left: 30%;
+    margin-top: 30%;
+    color: #5e94fe;
+  }
   /*Weather Mobile CSS */
   .degree {
     float: left;
   }
-  .w{
+  .w {
     width: 50px;
   }
-  .weatherpage{
+  .weatherpage {
     margin-left: 0%;
     margin-right: 0%;
     margin-top: 0%;
-    margin-bottom:0%;
+    margin-bottom: 0%;
+  }
+  .e5dem {
+    color: rgb(0, 0, 0);
+    font-weight: bolder;
+    font-size: 1em;
   }
 }

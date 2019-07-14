@@ -12,7 +12,9 @@ class Weather extends Component {
       days: [],
       icon: "10d",
       description: "",
-      humidity :""
+      humidity: "",
+      search: false,
+      citytest: ""
     };
   }
   componentDidMount() {
@@ -32,7 +34,7 @@ class Weather extends Component {
           country: data.city.country,
           city: data.city.name,
           week: data.list,
-          humidity : data.list[0].main.humidity,
+          humidity: data.list[0].main.humidity,
           days: [
             data.list[0],
             data.list[8],
@@ -72,6 +74,39 @@ class Weather extends Component {
     var n = weekday[d.getDay()];
     return n;
   };
+  getDayOfWeek = date => {
+    var dayOfWeek = new Date(date);
+    var day = dayOfWeek.getDay();
+    var n = day;
+    return n;
+  };
+  handleUserInput = e => {
+    const value = e.target.value;
+    fetch(
+      "https://api.openweathermap.org/data/2.5/forecast?q=" +
+        value +
+        "&cnt=40&units=metric&APPID=3d276dd0248a8f6d4a15500dc0dec11a"
+    )
+      .then(response => response.json())
+      .then(data => {
+        this.setState({
+          temp: data.list[0].main.temp,
+          country: data.city.country,
+          city: data.city.name,
+          week: data.list,
+          humidity: data.list[0].main.humidity,
+          days: [
+            data.list[0],
+            data.list[8],
+            data.list[16],
+            data.list[24],
+            data.list[32]
+          ],
+          icon: data.list[0].weather[0].icon,
+          description: data.list[0].weather[0].description
+        });
+      });
+  };
 
   render() {
     // icon
@@ -80,10 +115,12 @@ class Weather extends Component {
     const day = this.GetDay();
     //Day description
     const description = this.state.description;
-    //Humidity 
-    const humidity =  "Humidity : " +this.state.humidity + "%"
+    //Humidity
+    const humidity = "Humidity : " + this.state.humidity + "%";
     //days list
+    //day number
     const dayslist = this.state.days.map(days => {
+      var currentdaynumb = this.getDayOfWeek(days.dt_txt);
       return (
         <div>
           <DayList
@@ -92,6 +129,7 @@ class Weather extends Component {
             tempmax={days.main.temp_max}
             icon={days.weather[0].icon}
             date={days.dt_txt}
+            daynumb={currentdaynumb}
           />
         </div>
       );
@@ -104,7 +142,29 @@ class Weather extends Component {
               <img src={Back} onClick={this.DisplayBack} alt="goback" />
             </div>
             <form className="form-inline">
-              <img src={Search} className="mr-3" alt="search" />
+              {this.state.search ? (
+                <div>
+                  <input
+                    type="text"
+                    className="form-control form-control-sm animated slideInRight "
+                    id="exampleInputEmail1"
+                    aria-describedby="emailHelp"
+                    placeholder="City Name"
+                    onChange={this.handleUserInput}
+                    name="citytest"
+                  />
+                  <i class="fas fa-chevron-right ml-2 " onClick={()=>{this.setState({search:false})}} ></i>
+                </div>
+              ) : (
+                <img
+                  src={Search}
+                  onClick={() => {
+                    this.setState({ search: true });
+                  }}
+                  className="mr-3"
+                  alt="search"
+                />
+              )}
             </form>
           </nav>
         </div>
@@ -119,9 +179,7 @@ class Weather extends Component {
               <h6 className="ml-3 mt-2 font-weight-bold">{day}</h6>
               <h6 className="text-capitalize ml-3 mt-2">{description}</h6>
             </div>
-            <div>
-                  {humidity}
-            </div>
+            <div>{humidity}</div>
           </div>
 
           <div className="col">
